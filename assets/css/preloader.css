@@ -1,0 +1,79 @@
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    transition: opacity 1s cubic-bezier(.2,.6,.35,1) 2.4s, visibility 1s cubic-bezier(.2,.6,.35,1) 2.4s, transform 1s cubic-bezier(.5,.05,.7,.2) 1.8s;
+    opacity: 1;
+    visibility: visible;
+    width: 100vw;
+}
+
+.preloader-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #192623;
+    transform-origin: center top;
+    transition: transform .8s cubic-bezier(.77,0,.175,1) 1.8s;
+}
+
+.preloader-msg {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    right: 0;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    transition: transform .6s cubic-bezier(.5, .05, .7, .2) 1.6s, opacity .4s cubic-bezier(.2, .6, .35, 1) 1.8s;
+    width: 100%;
+    max-width: 180px;
+
+}
+
+.preloader-msg span {
+    color: #fff;
+    position: relative;
+    width: 100%;
+}
+
+.preloader-msg svg {
+    max-width: 300px;
+}
+
+.preloader-msg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10px;
+    bottom: 0;
+    right: -10px;
+    background-color: #192623;
+    opacity: 1;
+    transform-origin: right;
+    transition: transform 1s cubic-bezier(.5,.05,.7,.2);
+}
+
+body.loading .preloader {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+}
+
+body.loading .preloader-background {
+    transform: scaleY(.0001);
+    transition-delay: 1.8s;
+}
+
+body.loading .preloader-msg {
+    opacity: 0;
+    transform: translate(-50%,-50%) translateY(-60px);
+}
+
+body.loading .preloader-msg::after {
+    transform: scaleX(0);
+}

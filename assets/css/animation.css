@@ -1,0 +1,83 @@
+.hero .text h3, .hero .text h2 > span{
+    overflow: hidden;
+}
+
+.hero .text h3 span {
+    transform: translateY(100%);
+    transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.hero .text h2 span span {
+    transform: translateY(100%);
+    transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+body.is-loaded .hero .text h2 span span{
+    transform: translateY(0);
+}
+
+body.is-loaded .hero .text h3 span {
+    transform: translateY(0);
+}
+
+.hero .image::before, .hero .project-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -1px;
+    right: -1px;
+    bottom: 0;
+    background-color: #233632;
+    transform-origin: bottom;
+    z-index: 4;
+    transition: transform 1s cubic-bezier(0.25, 0.05, 0.1, 0.94);
+}
+.hero .image::before {
+    transition-duration: 1.2s;
+    transition-delay: 0.1s;
+}
+.hero figcaption, .hero .text h3, .hero .more {
+    opacity: 0;
+    transition: opacity .6s ease 1.4s;
+}
+.hero .content .project-image picture::before {
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 1s cubic-bezier(0.25, 0.05, 0.1, 0.94);
+}
+
+.hero .content .project-image picture::before {
+    transition-delay: .8s;
+}
+
+.hero .project-image figcaption {
+    transition-delay: 1.8s;
+}
+
+.hero .more, .hero .image figcaption  {
+    transition-delay: .8s;
+}
+
+ .hero .text h3 {
+    transition-delay: 0.9s;
+     transition-duration: 2s;
+}
+
+body.is-loaded .hero .image::before, body.is-loaded .hero .project-image::after {
+    transform: scaleY(0);
+}
+
+body.is-loaded .hero .content .project-image picture::before {
+    transform: scaleY(1);
+}
+
+body.is-loaded .hero .content .project-image picture::before, body.is-loaded .hero .text h3, body.is-loaded .hero .more {
+    opacity: 1;
+}
+body.is-loaded .hero figcaption {
+    opacity: .7;
+}
+
+body.is-loaded .hero .image figcaption {
+    opacity: .9;
+}

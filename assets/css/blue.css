@@ -1,0 +1,22 @@
+.application {
+    background-color: #002841;
+}
+.preloader-background {
+    background-color: #001d2f;
+}
+
+.preloader-msg::after {
+    background-color: #001d2f;
+}
+
+.hero .image::before, .hero .project-image::after {
+    background-color: #002841;
+}
+
+.about h2, .work h2 {
+    color: #002841;
+}
+
+.tile[data-project-no="3"] .image::before {
+    background-color: #002841;
+}
